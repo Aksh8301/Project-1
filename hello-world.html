@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090a18" />
+  <title>Hello World ✦</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --text: #f5f3ff;
+      --muted: #b4b4d3;
+      --border: rgba(255, 255, 255, .15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: grid;
+      place-items: center;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #090a18;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -2;
+      background: radial-gradient(ellipse at 50% 120%, #2a1151 0%, transparent 52%), #090a18;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(75px);
+      opacity: .44;
+      animation: float 13s ease-in-out infinite alternate;
+    }
+
+    .orb.one {
+      width: 430px;
+      height: 430px;
+      left: -110px;
+      top: -130px;
+      background: #8046fa;
+    }
+
+    .orb.two {
+      width: 450px;
+      height: 450px;
+      right: -140px;
+      bottom: -110px;
+      background: #1ab9f1;
+      animation-delay: -5s;
+    }
+
+    .orb.three {
+      width: 260px;
+      height: 260px;
+      left: 55%;
+      top: 15%;
+      background: #f43da0;
+      animation-delay: -8s;
+      opacity: .23;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+    }
+
+    main {
+      width: min(92vw, 850px);
+      padding: 72px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, .055);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 32px;
+      padding: 76px 36px 58px;
+      box-shadow: 0 25px 110px rgba(0, 0, 0, .25), inset 0 1px rgba(255, 255, 255, .08);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 18%;
+      right: 18%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #bca2ff, transparent);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 17px;
+      border: 1px solid rgba(187, 159, 255, .24);
+      background: rgba(140, 106, 255, .1);
+      border-radius: 50px;
+      color: #ded3ff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background: #a8f8cf;
+      box-shadow: 0 0 14px #7afbc8;
+    }
+
+    h1 {
+      margin: 28px 0 16px;
+      font-size: clamp(3.7rem, 10.8vw, 7rem);
+      letter-spacing: -.082em;
+      line-height: 1.03;
+      font-weight: 850;
+    }
+
+    h1 span {
+      display: block;
+      background: linear-gradient(105deg, #fff 6%, #e4b5ff 42%, #91ddff 77%, #fff);
+      background-size: 220% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shimmer 7s linear infinite;
+      padding-right: .1em;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.1vw, 1.15rem);
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border-radius: 14px;
+      padding: 15px 24px;
+      font-weight: 650;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+    }
+
+    button:focus-visible {
+      outline: 3px solid #a99aff;
+      outline-offset: 4px;
+    }
+
+    .primary {
+      border: 0;
+      color: #101024;
+      background: linear-gradient(135deg, #f6f1ff, #a9d5ff);
+      box-shadow: 0 8px 35px rgba(167, 163, 255, .22);
+    }
+
+    .primary:hover {
+      box-shadow: 0 12px 40px rgba(167, 163, 255, .38);
+    }
+
+    .secondary {
+      border: 1px solid var(--border);
+      color: #eeeaff;
+      background: rgba(255, 255, 255, .07);
+    }
+
+    .secondary:hover {
+      background: rgba(255, 255, 255, .13);
+    }
+
+    .status {
+      min-height: 24px;
+      margin-top: 22px;
+      color: #c8f8db;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 25px;
+      color: #8586a7;
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+
+    .sparkle {
+      position: absolute;
+      pointer-events: none;
+      font-size: 22px;
+      animation: pop 900ms ease-out forwards;
+    }
+
+    @keyframes float {
+      to {
+        transform: translate(90px, 65px) scale(1.15);
+      }
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position: 220% center;
+      }
+    }
+
+    @keyframes pop {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.3) rotate(0)
+      }
+
+      30% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -120px) scale(1.5) rotate(55deg)
+      }
+    }
+
+    @media(max-width:500px) {
+      main {
+        padding: 28px 0
+      }
+
+      .card {
+        padding: 64px 20px 40px;
+        border-radius: 25px
+      }
+
+      h1 {
+        letter-spacing: -.07em
+      }
+
+      button {
+        width: 100%
+      }
+
+      .actions {
+        padding: 0 4px
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background" aria-hidden="true">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+    <div class="grid"></div>
+  </div>
+  <main>
+    <section class="card" aria-labelledby="heading">
+      <div class="pill"><span class="dot"></span> Your journey starts here</div>
+      <h1 id="heading"><span>Hello, World!</span></h1>
+      <p>A little code. A lot of possibilities. Welcome to your beautifully crafted corner of the internet.</p>
+      <div class="actions">
+        <button class="primary" id="magic">✨ Make some magic</button>
+        <button class="secondary" id="greeting">👋 Say hello</button>
+      </div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </section>
+    <footer>Made with ♥, HTML, CSS & a sprinkle of JavaScript</footer>
+  </main>
+  <script>
+    const status = document.getElementById('status');
+    document.getElementById('greeting').addEventListener('click', () => {
+      const greetings = ['Hello, awesome human! 👋', 'You make the web brighter! ✨', 'Big things start with Hello World! 🚀'];
+      status.textContent = greetings[Math.floor(Math.random() * greetings.length)];
+    });
+    document.getElementById('magic').addEventListener('click', () => {
+      status.textContent = 'A little magic, just for you! ✨';
+      const card = document.querySelector('.card');
+      const symbols = ['✨', '✦', '💜', '⭐', '✧'];
+      for (let i = 0; i < 20; i++) {
+        const s = document.createElement('span');
+        s.className = 'sparkle'; s.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        s.style.left = `${8 + Math.random() * 84}%`; s.style.top = `${35 + Math.random() * 55}%`;
+        s.style.animationDelay = `${Math.random() * 250}ms`;
+        card.appendChild(s); setTimeout(() => s.remove(), 1400);
+      }
+    });
+  </script>
+</body>
+
+</html>
