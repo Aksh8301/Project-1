@@ -9,3 +9,35 @@ main{flex:1}.hero{padding:70px 0 42px;text-align:center}.pill{display:inline-fle
 @media(max-width:760px){.site-shell{width:min(100% - 28px,1120px)}.site-header{padding:18px 0}.brand{font-size:1rem}.nav a{padding:9px 11px;font-size:.85rem}.hero{padding:40px 0 30px}.hero-card{padding:46px 22px 30px}.features{grid-template-columns:1fr;gap:14px}.about-grid,.contact-layout{grid-template-columns:1fr}.page-intro{padding:46px 0 25px}.about-panel,.contact-form,.contact-aside{padding:27px}.footer{flex-direction:column;text-align:center}.contact-layout{margin-bottom:20px}}
 @media(max-width:440px){.brand .brand-name{display:none}.nav{gap:0}.nav a{padding:9px 12px}.hero h1{font-size:clamp(3rem,14vw,4.5rem)}.hero-card{border-radius:22px}.button{width:100%}.form-row{grid-template-columns:1fr;gap:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+\n
+/* Shared accessible theme switch */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:9px 13px;border:1px solid var(--border);border-radius:13px;background:var(--surface);color:var(--text);font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s}
+.theme-toggle:hover{background:var(--surface-hover);transform:translateY(-2px)}
+.theme-toggle:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.theme-icon{font-size:1.1rem}.header-actions{display:flex;align-items:center;gap:10px}
+:root[data-theme="light"]{color-scheme:light;--bg:#f7f8ff;--surface:rgba(255,255,255,.78);--surface-hover:rgba(237,235,255,.94);--border:rgba(65,57,120,.17);--text:#20203d;--muted:#575c78;--purple:#6944c7;--cyan:#0878a9;--mint:#176d50;--shadow:0 24px 85px rgba(44,34,103,.11)}
+:root[data-theme="light"] .background{background:radial-gradient(ellipse at 50% 115%,#e7dcff 0%,transparent 56%),var(--bg)}
+:root[data-theme="light"] .orb{opacity:.17}
+:root[data-theme="light"] .orb.three{opacity:.1}
+:root[data-theme="light"] .grid-bg{background-image:linear-gradient(rgba(57,46,109,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(57,46,109,.055) 1px,transparent 1px)}
+:root[data-theme="light"] .nav{background:rgba(255,255,255,.65)}
+:root[data-theme="light"] .nav a{color:#4c4b70}
+:root[data-theme="light"] .nav a:hover,:root[data-theme="light"] .nav a[aria-current=page]{color:#29234e;background:rgba(105,68,199,.12)}
+:root[data-theme="light"] .brand b{color:#6944c7}
+:root[data-theme="light"] .pill{color:#5937a3;background:rgba(105,68,199,.08);border-color:rgba(105,68,199,.2)}
+:root[data-theme="light"] .gradient-text{background-image:linear-gradient(105deg,#3e287c 6%,#8e3eb0 42%,#1476b6 77%,#3e287c)}
+:root[data-theme="light"] .eyebrow{color:#6944c7}
+:root[data-theme="light"] .button.secondary{color:#35275e;background:rgba(105,68,199,.08)}
+:root[data-theme="light"] .button.secondary:hover{background:rgba(105,68,199,.15)}
+:root[data-theme="light"] .button.primary{color:#19152f;background:linear-gradient(135deg,#e5d7ff,#b6e1ff)}
+:root[data-theme="light"] .glass::before{background:linear-gradient(90deg,transparent,rgba(125,91,203,.5),transparent)}
+:root[data-theme="light"] .quote-panel{background:linear-gradient(145deg,rgba(181,151,250,.22),rgba(136,208,241,.2))}
+:root[data-theme="light"] .small-muted,:root[data-theme="light"] .note{color:#666580}
+:root[data-theme="light"] .field label{color:#34304f}
+:root[data-theme="light"] .field input,:root[data-theme="light"] .field textarea{background:rgba(255,255,255,.82);border-color:rgba(65,57,120,.24)}
+:root[data-theme="light"] .field input::placeholder,:root[data-theme="light"] .field textarea::placeholder{color:#74768d}
+:root[data-theme="light"] .footer{color:#626580;border-top-color:var(--border)}
+:root[data-theme="light"] .footer a:hover{color:#6944c7}
+:root[data-theme="light"] .status.error{color:#b32c48}
+@media(max-width:760px){.site-header{flex-wrap:wrap}.header-actions{margin-left:auto}}
+@media(max-width:440px){.theme-toggle{padding:9px 10px}.theme-label{display:none}.header-actions{gap:6px}}
