@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#090a18">
     <meta name="description" content="Say hello through our interactive contact form.">
     <title>Contact | Hello World</title>
-    <link rel="stylesheet" href="styles.css">
+    <script>(function(){try{var saved=localStorage.getItem("hello-world-theme");var theme=saved==="light"||saved==="dark"?saved:(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=theme;document.querySelector('meta[name="theme-color"]').content=theme==="light"?"#f7f8ff":"#090a18"}catch(e){document.documentElement.dataset.theme="dark"}})();</script><link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -20,8 +20,8 @@
     <div class="site-shell">
         <header class="site-header"><a class="brand" href="index.html" aria-label="Hello World home"><span
                     class="brand-icon">✦</span><span class="brand-name">hello<b>world.</b></span></a>
-            <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a
-                    href="contact.html" aria-current="page">Contact</a></nav>
+            <div class="header-actions"><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html" aria-current="page">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☀️</span><span class="theme-label">Light</span></button></div>
         </header>
         <main>
             <section class="page-intro">
