@@ -26,7 +26,8 @@ if (form) form.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
   const data = new FormData(form);
-  const message = `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nSubject: ${data.get('subject')}\n\n${data.get('message')}`;
+  const message = `Name: ${data.get('name')}
+Email: ${data.get('email')}\nSubject: ${data.get('subject')}\n\n${data.get('message')}`;
   const feedback = document.getElementById('contact-status');
   feedback.classList.remove('error');
   try {
