@@ -46,3 +46,26 @@ if (form) form.addEventListener('submit', async (event) => {
     feedback.textContent = 'Select and copy the message below. Nothing has been sent.';
   }
 });
+\n
+/* Persist theme across pages while respecting system preference on first visit. */
+(function () {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+  const root = document.documentElement;
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    const isLight = theme === 'light';
+    toggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+    toggle.setAttribute('aria-pressed', String(isLight));
+    toggle.querySelector('.theme-icon').textContent = isLight ? '🌙' : '☀️';
+    toggle.querySelector('.theme-label').textContent = isLight ? 'Dark' : 'Light';
+    if (themeColor) themeColor.content = isLight ? '#f7f8ff' : '#090a18';
+  }
+  applyTheme(root.dataset.theme === 'light' ? 'light' : 'dark');
+  toggle.addEventListener('click', () => {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+    try { localStorage.setItem('hello-world-theme', next); } catch (_) {}
+  });
+})();
