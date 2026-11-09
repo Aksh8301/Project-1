@@ -1,2 +1,80 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#090a18"><meta name="description" content="Say hello through our interactive contact form."><title>Contact | Hello World</title><link rel="stylesheet" href="styles.css"></head><body><div class="background" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div><div class="grid-bg"></div></div>
-<div class="site-shell"><header class="site-header"><a class="brand" href="index.html" aria-label="Hello World home"><span class="brand-icon">✦</span><span class="brand-name">hello<b>world.</b></span></a><nav class="nav" aria-label="Main navigation"><a href="index.html" >Home</a><a href="about.html" >About</a><a href="contact.html" aria-current="page">Contact</a></nav></header><main><section class="page-intro"><div class="pill"><span class="dot"></span> Let's connect</div><h1>Say <span class="gradient-text">hello.</span> 👋</h1><p>Have an idea, a question, or just want to say hi? Write a message below.</p></section><section class="contact-layout"><div class="contact-form glass"><h2>Write your message</h2><p class="body-copy">Fill out the form to prepare a message you can copy into your email app.</p><form id="contact-form"><div class="form-row"><div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Alex Johnson" maxlength="100" required></div><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="alex@example.com" maxlength="150" required></div></div><div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" placeholder="Let's build something cool" maxlength="150" required></div><div class="field"><label for="message">Your message</label><textarea id="message" name="message" placeholder="Tell us what's on your mind..." maxlength="3000" required></textarea></div><button class="button primary" type="submit">📋 Copy my message</button><div class="status" id="contact-status" role="status" aria-live="polite"></div><p class="note">This is a frontend demo: it copies your message, but does not send it or store it anywhere. Connect a backend or form service to receive submissions.</p></form></div><aside class="contact-aside glass"><span class="eyebrow">Good conversations start here</span><h2 style="margin-top:13px">Let's make something great.</h2><p class="body-copy">Whether you're learning web development or building your next project, we'd love to hear your ideas.</p><div class="aside-item"><strong>💡 Share an idea</strong><p>Tell us about a concept you've been thinking about.</p></div><div class="aside-item"><strong>🛠️ Ask a question</strong><p>Need help getting started with HTML, CSS, or JavaScript?</p></div><div class="aside-item"><strong>✨ Just say hi</strong><p>Sometimes a simple hello is the beginning of something amazing.</p></div><a href="about.html" class="button secondary" style="margin-top:22px">Read our story ↗</a></aside></section></main><footer class="footer"><span>© <span id="year"></span> Hello World · Made with ♥ and a little magic.</span><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></div></footer></div><script src="script.js" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="theme-color" content="#090a18">
+    <meta name="description" content="Say hello through our interactive contact form.">
+    <title>Contact | Hello World</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="background" aria-hidden="true">
+        <div class="orb one"></div>
+        <div class="orb two"></div>
+        <div class="orb three"></div>
+        <div class="grid-bg"></div>
+    </div>
+    <div class="site-shell">
+        <header class="site-header"><a class="brand" href="index.html" aria-label="Hello World home"><span
+                    class="brand-icon">✦</span><span class="brand-name">hello<b>world.</b></span></a>
+            <nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html" aria-current="page">Contact</a></nav>
+        </header>
+        <main>
+            <section class="page-intro">
+                <div class="pill"><span class="dot"></span> Let's connect</div>
+                <h1>Say <span class="gradient-text">hello.</span> 👋</h1>
+                <p>Have an idea, a question, or just want to say hi? Write a message below.</p>
+            </section>
+            <section class="contact-layout">
+                <div class="contact-form glass">
+                    <h2>Write your message</h2>
+                    <p class="body-copy">Fill out the form to prepare a message you can copy into your email app.</p>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="field"><label for="name">Your name</label><input id="name" name="name"
+                                    type="text" autocomplete="name" placeholder="Alex Johnson" maxlength="100" required>
+                            </div>
+                            <div class="field"><label for="email">Email address</label><input id="email" name="email"
+                                    type="email" autocomplete="email" placeholder="alex@example.com" maxlength="150"
+                                    required></div>
+                        </div>
+                        <div class="field"><label for="subject">Subject</label><input id="subject" name="subject"
+                                type="text" placeholder="Let's build something cool" maxlength="150" required></div>
+                        <div class="field"><label for="message">Your message</label><textarea id="message"
+                                name="message" placeholder="Tell us what's on your mind..." maxlength="3000"
+                                required></textarea></div><button class="button primary" type="submit">📋 Copy my
+                            message</button>
+                        <div class="status" id="contact-status" role="status" aria-live="polite"></div>
+                        <p class="note">This is a frontend demo: it copies your message, but does not send it or store
+                            it anywhere. Connect a backend or form service to receive submissions.</p>
+                    </form>
+                </div>
+                <aside class="contact-aside glass"><span class="eyebrow">Good conversations start here</span>
+                    <h2 style="margin-top:13px">Let's make something great.</h2>
+                    <p class="body-copy">Whether you're learning web development or building your next project, we'd
+                        love to hear your ideas.</p>
+                    <div class="aside-item"><strong>💡 Share an idea</strong>
+                        <p>Tell us about a concept you've been thinking about.</p>
+                    </div>
+                    <div class="aside-item"><strong>🛠️ Ask a question</strong>
+                        <p>Need help getting started with HTML, CSS, or JavaScript?</p>
+                    </div>
+                    <div class="aside-item"><strong>✨ Just say hi</strong>
+                        <p>Sometimes a simple hello is the beginning of something amazing.</p>
+                    </div><a href="about.html" class="button secondary" style="margin-top:22px">Read our story ↗</a>
+                </aside>
+            </section>
+        </main>
+        <footer class="footer"><span>© <span id="year"></span> Hello World · Made with ♥ and a little magic.</span>
+            <div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="contact.html">Contact</a></div>
+        </footer>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
