@@ -9,7 +9,8 @@ main{flex:1}.hero{padding:70px 0 42px;text-align:center}.pill{display:inline-fle
 @media(max-width:760px){.site-shell{width:min(100% - 28px,1120px)}.site-header{padding:18px 0}.brand{font-size:1rem}.nav a{padding:9px 11px;font-size:.85rem}.hero{padding:40px 0 30px}.hero-card{padding:46px 22px 30px}.features{grid-template-columns:1fr;gap:14px}.about-grid,.contact-layout{grid-template-columns:1fr}.page-intro{padding:46px 0 25px}.about-panel,.contact-form,.contact-aside{padding:27px}.footer{flex-direction:column;text-align:center}.contact-layout{margin-bottom:20px}}
 @media(max-width:440px){.brand .brand-name{display:none}.nav{gap:0}.nav a{padding:9px 12px}.hero h1{font-size:clamp(3rem,14vw,4.5rem)}.hero-card{border-radius:22px}.button{width:100%}.form-row{grid-template-columns:1fr;gap:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
-\n
+
+
 /* Shared accessible theme switch */
 .theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:9px 13px;border:1px solid var(--border);border-radius:13px;background:var(--surface);color:var(--text);font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,transform .2s}
 .theme-toggle:hover{background:var(--surface-hover);transform:translateY(-2px)}
